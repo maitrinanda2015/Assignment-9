@@ -1,0 +1,311 @@
+<aside>
+💡  **1**
+
+Given an integer `n`, return *`true` if it is a power of two. Otherwise, return `false`*.
+
+An integer `n` is a power of two, if there exists an integer `x` such that `n == 2x`.
+
+**Example 1:**
+Input: n = 1 
+
+Output: true
+
+**Example 2:**
+Input: n = 16 
+
+Output: true
+
+**Example 3:**
+Input: n = 3 
+
+Output: false
+
+ans-:
+public class PowerOfTwo {
+    public static boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        
+        return (n & (n - 1)) == 0;
+    }
+    
+    public static void main(String[] args) {
+        int n1 = 1;
+        int n2 = 16;
+        int n3 = 3;
+        
+        System.out.println(isPowerOfTwo(n1)); // Output: true
+        System.out.println(isPowerOfTwo(n2)); // Output: true
+        System.out.println(isPowerOfTwo(n3)); // Output: false
+    }
+}
+<aside>
+💡  **2**
+
+Given a number n, find the sum of the first natural numbers.
+
+**Example 1:**
+
+Input: n = 3 
+
+Output: 6
+
+**Example 2:**
+
+Input  : 5 
+
+Output : 15
+
+ans-:
+public class SumOfNaturalNumbers {
+    public static int sumOfFirstNNumbers(int n) {
+        int sum = (n * (n + 1)) / 2;
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int n1 = 3;
+        int n2 = 5;
+
+        System.out.println(sumOfFirstNNumbers(n1)); // Output: 6
+        System.out.println(sumOfFirstNNumbers(n2)); // Output: 15
+    }
+}
+<aside>
+💡 **3**
+
+****Given a positive integer, N. Find the factorial of N. 
+
+**Example 1:**
+
+Input: N = 5 
+
+Output: 120
+
+**Example 2:**
+
+Input: N = 4
+
+Output: 24
+
+ans-:
+public class Factorial {
+    public static long factorial(int N) {
+        long factorial = 1;
+        for (int i = 1; i <= N; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    public static void main(String[] args) {
+        int N1 = 5;
+        int N2 = 4;
+
+        System.out.println(factorial(N1)); // Output: 120
+        System.out.println(factorial(N2)); // Output: 24
+    }
+}
+<aside>
+💡 **4**
+
+Given a number N and a power P, the task is to find the exponent of this number raised to the given power, i.e. N^P.
+
+**Example 1 :** 
+
+Input: N = 5, P = 2
+
+Output: 25
+
+**Example 2 :**
+Input: N = 2, P = 5
+
+Output: 32
+
+ans-:
+public class Exponentiation {
+    public static double calculateExponent(double N, int P) {
+        return Math.pow(N, P);
+    }
+
+    public static void main(String[] args) {
+        double N1 = 5;
+        int P1 = 2;
+
+        double N2 = 2;
+        int P2 = 5;
+
+        System.out.println(calculateExponent(N1, P1)); // Output: 25.0
+        System.out.println(calculateExponent(N2, P2)); // Output: 32.0
+    }
+}
+<aside>
+💡 **5**
+
+Given an array of integers **arr**, the task is to find maximum element of that array using recursion.
+
+**Example 1:**
+
+Input: arr = {1, 4, 3, -5, -4, 8, 6};
+Output: 8
+
+**Example 2:**
+
+Input: arr = {1, 4, 45, 6, 10, -8};
+Output: 45
+
+ans-:
+public class MaximumElement {
+    public static int findMax(int[] arr, int start, int end) {
+        if (start == end) {
+            return arr[start];
+        }
+
+        int mid = (start + end) / 2;
+        int leftMax = findMax(arr, start, mid);
+        int rightMax = findMax(arr, mid + 1, end);
+
+        return Math.max(leftMax, rightMax);
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 4, 3, -5, -4, 8, 6};
+        int[] arr2 = {1, 4, 45, 6, 10, -8};
+
+        System.out.println(findMax(arr1, 0, arr1.length - 1)); // Output: 8
+        System.out.println(findMax(arr2, 0, arr2.length - 1)); // Output: 45
+    }
+}
+<aside>
+💡 **6**
+
+Given first term (a), common difference (d) and a integer N of the Arithmetic Progression series, the task is to find Nth term of the series.
+
+**Example 1:**
+
+Input : a = 2 d = 1 N = 5
+Output : 6
+The 5th term of the series is : 6
+
+**Example 2:**
+
+Input : a = 5 d = 2 N = 10
+Output : 23
+The 10th term of the series is : 23
+
+ans-:
+public class NthTermAP {
+    public static int findNthTerm(int a, int d, int N) {
+        return a + (N - 1) * d;
+    }
+
+    public static void main(String[] args) {
+        int a1 = 2, d1 = 1, N1 = 5;
+        int a2 = 5, d2 = 2, N2 = 10;
+
+        System.out.println(findNthTerm(a1, d1, N1)); // Output: 6
+        System.out.println(findNthTerm(a2, d2, N2)); // Output: 23
+    }
+}
+<aside>
+💡  **7**
+
+Given a string S, the task is to write a program to print all permutations of a given string.
+
+**Example 1:**
+
+***Input:***
+
+*S = “ABC”*
+
+***Output:***
+
+*“ABC”, “ACB”, “BAC”, “BCA”, “CBA”, “CAB”*
+
+**Example 2:**
+
+***Input:***
+
+*S = “XY”*
+
+***Output:***
+
+*“XY”, “YX”*
+
+ans-:
+import java.util.ArrayList;
+import java.util.List;
+
+public class StringPermutations {
+    public static List<String> findPermutations(String s) {
+        List<String> permutations = new ArrayList<>();
+        backtrack(s.toCharArray(), 0, permutations);
+        return permutations;
+    }
+
+    private static void backtrack(char[] chars, int start, List<String> permutations) {
+        if (start == chars.length - 1) {
+            permutations.add(new String(chars));
+            return;
+        }
+
+        for (int i = start; i < chars.length; i++) {
+            swap(chars, start, i);
+            backtrack(chars, start + 1, permutations);
+            swap(chars, start, i); // backtrack
+        }
+    }
+
+    private static void swap(char[] chars, int i, int j) {
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        String s1 = "ABC";
+        String s2 = "XY";
+
+        List<String> permutations1 = findPermutations(s1);
+        System.out.println(permutations1); // Output: [ABC, ACB, BAC, BCA, CAB, CBA]
+
+        List<String> permutations2 = findPermutations(s2);
+        System.out.println(permutations2); // Output: [XY, YX]
+    }
+}
+<aside>
+💡 **8**
+
+Given an array, find a product of all array elements.
+
+**Example 1:**
+
+Input  : arr[] = {1, 2, 3, 4, 5}
+Output : 120
+**Example 2:**
+
+Input  : arr[] = {1, 6, 3}
+Output : 18
+
+ans-:
+public class ArrayProduct {
+    public static int findProduct(int[] arr) {
+        int product = 1;
+        for (int num : arr) {
+            product *= num;
+        }
+        return product;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {1, 6, 3};
+
+        int product1 = findProduct(arr1);
+        System.out.println(product1); // Output: 120
+
+        int product2 = findProduct(arr2);
+        System.out.println(product2); // Output: 18
+    }
+}
